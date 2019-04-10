@@ -11,6 +11,6 @@ $conn = new mysqli($servername,$user_name,$password,$dbname); //conexion de base
 if($conn->connect_error){
 	die("Error: ".$conn->connect_error); //muestra el fallo de conexion
 	}else{
-		die("Conexion existosa a la base de datos Market");
+		//die("Conexion existosa a la base de datos Market");
 	}
 ?>

@@ -3,7 +3,7 @@
         <title>Market</title>
         <link rel="icon" type="image/ico" href="images/f.jpg" />
 <meta charset="UTF-8">
-        <form  name="formulario" method="post" action="index2.html">
+        <form  name="formulario" method="post" action="insert_prod.php">
 		<center>
                 <table border="1">
                     <h3>Market</h3>
@@ -35,8 +35,8 @@
                         <div>
                         <label>Estado<font color="red">*</label>
                         <select name="estprod" style="margin-left: 174px; width: 184px" placeholder="Ingrese Genero"required>
-                            <option>Habilitado</option>
-                            <option>Desabilitado</option>
+                            <option value=1>Habilitado</option>
+                            <option value=0>Desabilitado</option>
                             </select>
                         </div>
                         </td>
