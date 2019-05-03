@@ -50,17 +50,32 @@
                     </td>
                     </table>
 					<hr>
-					<table border="2">
-					<td>
-					<div>
-					<label>Codigo Producto |</label>
-					<label>Nombre Producto |</label>
-					<label>Cantidad |</label>
-					<label>Estado |</label>
-					</div>
-					</td>
-					</table>
+					
         </center>
         </form>
     </head>
+	
 </html>
+<table border='1' align="center">
+<tr><th>Codigo</th><th>Nombre</th><th>Cantidad</th><th>Ed</th><th>Eli</tr>
+<?php
+// 1. Database Conection
+	include("database.php");
+	// 2. Create SQL
+	$sql = "SELECT * FROM productos";
+	$result = $conn->query($sql);
+	//3.Show Data
+	if($result->num_rows>0){
+		while($row=$result->fetch_assoc()){
+		echo "<tr>";
+		echo "<td>".$row["codigo_prod"]."</td>";
+		echo "<td>".$row["nombre_prod"]."</td>";
+		echo "<td>".$row["cantidad"]."</td>";
+		echo "<td><img src='icons/edit.png' width='20'></td>";
+		echo "<td><a href='delete_product.php?cod=".$row["codigo_prod"]."'><img src='icons/delete.png' width='20'></td>";
+		echo "</tr>";
+		}
+	}else{
+		echo "::: No hay productos registrados :::";
+	}
+?>
